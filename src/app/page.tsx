@@ -6,7 +6,6 @@ export default function Home() {
       <div className="flex flex-col items-center gap-8">
         <h1 className="text-4xl font-semibold">Christmas List</h1>
         <Link href='/signin' className="bg-blue-300 py-2 px-5 rounded-xl font-semibold" >ADD/UPDATE ITEMS</Link>
-        
       </div>
       <hr className="border-black my-10" ></hr>
       <div>
