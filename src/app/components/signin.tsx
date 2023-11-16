@@ -20,7 +20,7 @@ export default function SignIn() {
 
   if (signedIn) {
     return(
-      <SignedIn name={name.toLowerCase()} />
+      <SignedIn name={name.charAt(0).toUpperCase() + name.slice(1)} />
     )
   } else {
     return(

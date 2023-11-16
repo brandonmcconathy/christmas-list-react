@@ -1,7 +1,13 @@
-export default function UserDisplay() {
+
+
+export default function UserDisplay(props: any) {
+
+  const { name, data } = props
+
   return(
     <div>
-      <h1>Brandon</h1>
+      <h1>{name}</h1>
+      
     </div>
   )
 }
