@@ -20,7 +20,7 @@ export default function SignIn() {
 
   if (signedIn) {
     return(
-      <SignedIn />
+      <SignedIn name={name} />
     )
   } else {
     return(
