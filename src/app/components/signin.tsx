@@ -1,6 +1,8 @@
 'use client'
 
+import SignedIn from "./signedin"
 import { useState } from "react"
+import Link from "next/link"
 
 export default function SignIn() {
 
@@ -18,13 +20,14 @@ export default function SignIn() {
 
   if (signedIn) {
     return(
-      <h1>Signed in</h1>
+      <SignedIn />
     )
   } else {
     return(
       <div className="text-center m-10 flex flex-col gap-8 items-center">
+        <Link href='/' className="bg-blue-100 py-1 px-4 rounded-xl font-semibold box-pop -mb-2 text-xs" >Go Back</Link>
         <h1 className="text-2xl font-semibold">Enter your name to continue:</h1>
-        <form onSubmit={handleSubmit} className="flex flex-col items-center gap-4">
+        <form onSubmit={handleSubmit} className="flex flex-col items-center gap-5">
           <input className="bg-blue-200 px-4 py-2 rounded-xl box-pop" placeholder="Name" value={name} onChange={handleChange} required />
           <button className="bg-blue-200 px-4 py-2 rounded-xl box-pop font-semibold">SUBMIT</button>
         </form>
