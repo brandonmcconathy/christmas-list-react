@@ -29,7 +29,7 @@ export default function SignIn() {
         <h1 className="text-2xl font-semibold">Enter your name to continue:</h1>
         <form onSubmit={handleSubmit} className="flex flex-col items-center gap-5">
           <input className="bg-blue-200 px-4 py-2 rounded-xl box-pop" placeholder="Name" value={name} onChange={handleChange} required />
-          <button className="bg-blue-200 px-4 py-2 rounded-xl box-pop font-semibold">SUBMIT</button>
+          <button className="bg-blue-200 px-4 py-2 rounded-xl box-pop font-semibold">CONTINUE</button>
         </form>
         <p className="text-gray-500">If you have already signed up use the exact same name as before.</p>
       </div>
