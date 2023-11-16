@@ -1,12 +1,13 @@
 'use client'
 
-export default function ItemDisplay(props: any) {
+export default function ItemDisplay( {item}: any ) {
 
-  const { itemName, link, description } = props
+  const { name, link, description } = item
+  console.log(item)
 
   return(
     <li>
-      <p>{itemName}</p>
+      <p>{name}</p>
       <p>{link}</p>
       <p>{description}</p>
     </li>
