@@ -27,8 +27,8 @@ export default function SignedIn(props : any) {
 
   return(
     <div>
-      {loading ? <h1>Loading...</h1> : 
-      <div>
+      {loading ? <h1 className='text-center'>Loading...</h1> : 
+      <div className='text-center flex flex-col items-center'>
         <h1>name: {name}</h1>
         <ul>
           {data.map((item: any, index) => <ItemDisplay item={item} key={index} />)}
