@@ -29,9 +29,7 @@ export default function SignedIn(props : any) {
     <div className='m-10'>
       {loading ? <h1 className='text-center'>Loading...</h1> : 
       <div className='flex flex-col items-center gap-10'>
-        <div>
-          <button className="bg-blue-200 px-4 py-2 rounded-xl box-pop font-semibold">ADD/UPDATE</button>
-        </div>
+        <button className="bg-blue-200 px-4 py-2 rounded-xl box-pop font-semibold">ADD/UPDATE</button>
         <UserDisplay name={name} data={data} />
       </div>}
     </div>
