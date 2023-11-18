@@ -1,7 +1,7 @@
 'use client'
 
 import { db } from '../../../lib/firebase'
-import ItemDisplay from './itemdisplay'
+import UserDisplay from './userdisplay'
 import { useEffect, useState } from "react"
 import { doc, getDoc } from "firebase/firestore"
 
@@ -26,15 +26,14 @@ export default function SignedIn(props : any) {
   },[])
 
   return(
-    <div>
+    <div className='m-10'>
       {loading ? <h1 className='text-center'>Loading...</h1> : 
-      <div className='text-center flex flex-col items-center'>
-        <h1>name: {name}</h1>
-        <ul>
-          {data.map((item: any, index) => <ItemDisplay item={item} key={index} />)}
-        </ul>
+      <div className='flex flex-col items-center gap-10'>
+        <div>
+          <button className="bg-blue-200 px-4 py-2 rounded-xl box-pop font-semibold">ADD/UPDATE</button>
+        </div>
+        <UserDisplay name={name} data={data} />
       </div>}
-      
     </div>
   )
 }

@@ -3,7 +3,6 @@
 export default function ItemDisplay( {item}: any ) {
 
   const { name, link, description } = item
-  console.log(item)
 
   return(
     <li>
