@@ -9,9 +9,7 @@ export default function ItemDisplay( {item}: any ) {
   if (link == '') {
     return(
       <li className="flex flex-col ml-4 gap-1">
-        <div className="flex items-center gap-6">
-          <p className="text-lg">{name}</p>
-        </div>
+        <p className="text-lg font-semibold">{name}</p>
         <p className="ml-5">{description}</p>
       </li>
     )
@@ -20,8 +18,8 @@ export default function ItemDisplay( {item}: any ) {
   return(
     <li className="flex flex-col ml-4 gap-1">
       <div className="flex items-center gap-6">
-        <p className="text-lg">{name}</p>
-        <Link href={link} target="_blank" className="bg-blue-400 px-2 py-1 rounded-xl box-pop font-semibold">Link</Link>
+        <p className="text-lg font-semibold">{name}</p>
+        <Link href={link} target="_blank" className="bg-blue-400 px-2 py-1 rounded-xl box-pop font-semibold transition duration-300 hover:bg-blue-200">Link</Link>
       </div>
       <p className="ml-5">{description}</p>
     </li>
