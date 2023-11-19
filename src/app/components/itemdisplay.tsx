@@ -6,6 +6,17 @@ export default function ItemDisplay( {item}: any ) {
 
   const { name, link, description } = item
 
+  if (link == '') {
+    return(
+      <li className="flex flex-col ml-4 gap-1">
+        <div className="flex items-center gap-6">
+          <p className="text-lg">{name}</p>
+        </div>
+        <p className="ml-5">{description}</p>
+      </li>
+    )
+  }
+
   return(
     <li className="flex flex-col ml-4 gap-1">
       <div className="flex items-center gap-6">
