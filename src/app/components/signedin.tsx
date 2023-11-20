@@ -4,6 +4,7 @@ import { db } from '../../../lib/firebase'
 import UserDisplay from './userdisplay'
 import { useEffect, useState } from "react"
 import { doc, getDoc } from "firebase/firestore"
+import Link from 'next/link'
 
 export default function SignedIn(props : any) {
 
@@ -26,7 +27,8 @@ export default function SignedIn(props : any) {
   },[])
 
   return(
-    <div className='m-10'>
+    <div className='my-10 flex flex-col items-center'>
+      <Link href='/' className="bg-blue-100 py-1 px-4 rounded-xl font-semibold box-pop text-xs mb-8" >Go Back</Link>
       {loading ? <h1 className='text-center'>Loading...</h1> : 
       <div className='flex flex-col items-center gap-10'>
         <button className="bg-blue-200 px-4 py-2 rounded-xl box-pop font-semibold">ADD/UPDATE</button>
