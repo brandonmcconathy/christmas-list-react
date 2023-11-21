@@ -36,7 +36,7 @@ export default function Home() {
       </div>
       <hr className="border-black my-10" ></hr>
       {loading ? <h1 className='text-center'>Loading...</h1> : 
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center gap-12">
         {names.map((name, index) => <UserDisplay name={name} data={data[index].items} key={`${name} ${index}`} />)}
       </div>}
     </main>
