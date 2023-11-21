@@ -19,7 +19,7 @@ export default function Home() {
       let tempData:any = []
       querySnapshot.forEach((doc) => {
         tempNames.push(doc.id)
-        tempData.push(doc.data())
+        tempData.push(doc.data().items)
       })
       setNames(tempNames)
       setData(tempData)
@@ -37,7 +37,7 @@ export default function Home() {
       <hr className="border-black my-10" ></hr>
       {loading ? <h1 className='text-center'>Loading...</h1> : 
       <div className="flex flex-col items-center gap-12">
-        {names.map((name, index) => <UserDisplay name={name} data={data[index].items} key={`${name} ${index}`} />)}
+        {names.map((name, index) => <UserDisplay name={name} data={data[index]} key={`${name} ${index}`} />)}
       </div>}
     </main>
   )
