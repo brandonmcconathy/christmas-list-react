@@ -33,7 +33,7 @@ export default function SignedIn(props : any) {
       {loading ? <h1 className='text-center'>Loading...</h1> : 
       <>
         <UserDisplay name={name} data={data} />
-        <AddItem />
+        <AddItem name={name} data={data} />
       </>}
     </div>
   )
