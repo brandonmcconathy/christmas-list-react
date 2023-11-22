@@ -2,6 +2,7 @@
 
 import { db } from '../../../lib/firebase'
 import UserDisplay from './userdisplay'
+import AddItem from './additem'
 import { useEffect, useState } from "react"
 import { doc, getDoc } from "firebase/firestore"
 import Link from 'next/link'
@@ -32,6 +33,7 @@ export default function SignedIn(props : any) {
       {loading ? <h1 className='text-center'>Loading...</h1> : 
       <>
         <UserDisplay name={name} data={data} />
+        <AddItem />
       </>}
     </div>
   )
