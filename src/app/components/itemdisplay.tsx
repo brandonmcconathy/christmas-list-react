@@ -15,7 +15,6 @@ export default function ItemDisplay( {item}: any ) {
         </li>
         <hr className="border-black my-4 w-full"></hr>
       </>
-      
     )
   }
 
@@ -28,6 +27,5 @@ export default function ItemDisplay( {item}: any ) {
       </li>
       <hr className="border-black my-4 w-full"></hr>
     </>
-    
   )
 }
