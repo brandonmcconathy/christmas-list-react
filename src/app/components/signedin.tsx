@@ -46,10 +46,10 @@ export default function SignedIn(props : any) {
 
     const handleDelete = async (event:any) => {
       const index = event.target.value
-      const tempData:any = data
-      tempData.splice(index,1)
+      let tempData:never[] = data
+      setData([...tempData.slice(0, index), ...tempData.slice(Number(index)+1)])
+      tempData.splice(index, 1)
       AddDBData(tempData)
-      setData(tempData)
     }
 
   return(
