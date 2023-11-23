@@ -54,8 +54,8 @@ export default function SignedIn(props : any) {
           <h1 className='font-semibold text-lg'>Add new item</h1>
           <div className='flex gap-4'>
             <input className="bg-blue-200 px-4 py-2 rounded-xl box-pop" placeholder="Name" name='name' value={item.name} onChange={handleChange} required />
-            <input className="bg-blue-200 px-4 py-2 rounded-xl box-pop" placeholder="Link" name='link' value={item.link} onChange={handleChange} />
-            <input className="bg-blue-200 px-4 py-2 rounded-xl box-pop" placeholder="Description" name='description' value={item.description} onChange={handleChange} />
+            <input className="bg-blue-200 px-4 py-2 rounded-xl box-pop" placeholder="Link (not required)" name='link' value={item.link} onChange={handleChange} />
+            <input className="bg-blue-200 px-4 py-2 rounded-xl box-pop" placeholder="Description (not required)" name='description' value={item.description} onChange={handleChange} />
           </div>
             <button className="bg-blue-100 py-1 px-4 rounded-xl font-semibold box-pop">ADD ITEM</button>
         </form>
