@@ -54,7 +54,7 @@ export default function SignedIn(props : any) {
 
   return(
     <div className='my-10 flex flex-col items-center gap-10 mb-24'>
-      <Link href='/' className="bg-blue-100 py-1 px-4 rounded-xl font-semibold box-pop text-xs" >Go Back</Link>
+      <Link href='/' className="bg-blue-100 py-1 px-4 rounded-xl font-semibold box-pop text-xs transition duration-300 hover:bg-blue-200" >Go Back</Link>
       {loading ? <h1 className='text-center'>Loading...</h1> : 
       <>
         <form className="flex flex-col items-center gap-3" onSubmit={handleSubmit}>
@@ -64,7 +64,7 @@ export default function SignedIn(props : any) {
             <input className="bg-blue-200 px-4 py-2 rounded-xl box-pop" placeholder="Link (not required)" name='link' value={item.link} onChange={handleChange} />
             <input className="bg-blue-200 px-4 py-2 rounded-xl box-pop" placeholder="Description (not required)" name='description' value={item.description} onChange={handleChange} />
           </div>
-            <button className="bg-blue-100 py-1 px-4 rounded-xl font-semibold box-pop">ADD ITEM</button>
+            <button className="bg-blue-100 py-1 px-4 rounded-xl font-semibold box-pop transition duration-300 hover:bg-blue-200">ADD ITEM</button>
         </form>
         <div className="w-7/12 bg-blue-200 px-10 py-5 rounded-xl box-pop">
           <h1 className="text-2xl text-center font-semibold mb-4">{name}</h1>
@@ -75,14 +75,14 @@ export default function SignedIn(props : any) {
               <p className="font-bold">-</p>
               <p className="text-lg font-semibold">{item.name}</p>
               <p className="text-left">{item.description}</p>
-              <button onClick={handleDelete} className="bg-blue-100 py-1 px-4 rounded-xl font-semibold box-pop" value={index}>Delete</button>
+              <button onClick={handleDelete} className="bg-blue-100 py-1 px-4 rounded-xl font-semibold box-pop transition duration-300 hover:bg-blue-200" value={index}>Delete</button>
             </li> : 
             <li className="flex items-center ml-4 gap-5" key={index}>
               <p className="font-bold">-</p>
               <p className="text-lg font-semibold">{item.name}</p>
               <Link href={item.link} target="_blank" className="bg-blue-400 px-2 py-1 rounded-xl box-pop font-semibold transition duration-300 hover:bg-blue-200">Link</Link>
               <p className="text-left">{item.description}</p>
-              <button onClick={handleDelete} className="bg-blue-100 py-1 px-4 rounded-xl font-semibold box-pop" value={index}>Delete</button>
+              <button onClick={handleDelete} className="bg-blue-100 py-1 px-4 rounded-xl font-semibold box-pop transition duration-300 hover:bg-blue-200" value={index}>Delete</button>
             </li>
             ))}
           </ul>
