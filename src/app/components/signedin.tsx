@@ -64,7 +64,7 @@ export default function SignedIn(props : any) {
             <input className="bg-blue-200 px-4 py-2 rounded-xl box-pop" placeholder="Link (not required)" name='link' value={item.link} onChange={handleChange} />
             <input className="bg-blue-200 px-4 py-2 rounded-xl box-pop" placeholder="Description (not required)" name='description' value={item.description} onChange={handleChange} />
           </div>
-            <button className="bg-blue-100 py-1 px-4 rounded-xl font-semibold box-pop transition duration-300 hover:bg-blue-200">ADD ITEM</button>
+            <button className="bg-blue-100 py-2 px-4 rounded-xl font-semibold box-pop transition duration-300 hover:bg-blue-200">ADD ITEM</button>
         </form>
         <div className="w-97 bg-blue-200 px-2 py-5 rounded-xl box-pop sm:w-5/6 lg:w-2/3 xl:w-1/2 md:px-6 lg:px-12">
           <h1 className="text-2xl text-center font-semibold">{name}</h1>
@@ -80,7 +80,7 @@ export default function SignedIn(props : any) {
             </li> : 
             <li className="flex flex-col items-center gap-4" key={index}>
               <p className="font-semibold text-lg">{item.name}</p>
-              <Link href={item.link} target="_blank" className="bg-blue-400 px-2 py-1 rounded-xl box-pop font-semibold transition duration-300 hover:bg-blue-200">Link</Link>
+              <Link href={item.link} target="_blank" className="bg-blue-400 px-4 py-2 rounded-xl box-pop font-semibold transition duration-300 hover:bg-blue-200">Link</Link>
               <p className="text-center">{item.description}</p>
               <button onClick={handleDelete} className="bg-blue-100 py-1 px-4 rounded-xl font-semibold box-pop transition duration-300 hover:bg-blue-200" value={index}>Delete</button>
               <hr className="border-black my-4 w-full"></hr>
