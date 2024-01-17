@@ -1,6 +1,6 @@
-# Travis River Jones Scholarship Foundation
+# Christmas List
 
-*Built using React.js, Next.js, Firebase, Javascript, and Tailwind CSS.*
+*Built using React.js, Next.js, Firebase, Typescript, and Tailwind CSS.*
 
 [Live Website](https://family-christmas-list.vercel.app/)
 
