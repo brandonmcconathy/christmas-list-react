@@ -108,6 +108,7 @@ export default function SignedIn(props : any) {
           <button onClick={() => setUpdating((currState) => !currState)} className="bg-blue-200 font-2xl py-2 px-5 rounded-xl font-bold box-pop transition duration-300 hover:bg-blue-300">Modify your list</button>
         </div>
         <hr className="border-black my-10" ></hr>
+        <h1 className='mb-8 mx-2 text-lg font-semibold'>Your list is not visible here so you cannot see what others have bought you already but everyone else is able to see your list. Click the above button to view and modify your own list.</h1>
         {loading ? <h1 className='text-center'>Loading...</h1> : 
         <div className="flex flex-col items-center gap-10">
           {names.map((user, index) => user != name ? <UserDisplay userName={user} family={family} data={data[index]} key={`${user} ${index}`} /> : null)}
