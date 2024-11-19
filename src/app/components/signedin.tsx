@@ -71,7 +71,7 @@ export default function SignedIn(props : any) {
   if (updating) {
     return(
       <div className='my-10 flex flex-col items-center gap-10 mb-24'>
-        <button onClick={() => setUpdating((currState) => !currState)} className="bg-blue-100 py-1 px-4 rounded-xl font-semibold box-pop text-xs transition duration-300 hover:bg-blue-200" >Go Back</button>
+        <button onClick={() => setUpdating((currState) => !currState)} className="bg-blue-100 font-2xl py-2 px-5 rounded-xl font-bold box-pop transition duration-300 hover:bg-blue-200" >Go Back</button>
         {loading ? <h1 className='text-center'>Loading...</h1> : 
         <>
           <form className="flex flex-col items-center gap-3" onSubmit={handleSubmit}>
