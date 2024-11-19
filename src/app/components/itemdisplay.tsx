@@ -1,29 +1,30 @@
 'use client'
 
 import Link from "next/link"
+import { useState } from "react"
+import { doc, updateDoc } from "firebase/firestore"
+import { db } from "../../../lib/firebase"
 
-export default function ItemDisplay( {item}: any ) {
+export default function ItemDisplay( props: any ) {
 
-  const { name, link, description } = item
+  const {item, name, userName, family} = props
+  const { link, description, bought } = item
 
-  if (link == '') {
-    return(
-      <>
-        <li className="flex flex-col items-center gap-4">
-          <p className="font-semibold text-lg">{name}</p>
-          <p className="text-center">{description}</p>
-        </li>
-        <hr className="border-black my-4 w-full"></hr>
-      </>
-    )
+  const [itemBought, setItemBought] = useState(bought)
+
+  const handleClick = async () => {
+    await updateDoc(doc(db, family, userName), {[name + ".bought"]: !itemBought})
+    setItemBought((itemBought:boolean) => !itemBought)
   }
 
   return(
     <>
       <li className="flex flex-col items-center gap-4">
         <p className="font-semibold text-lg">{name}</p>
-        <Link href={link} target="_blank" className="bg-blue-400 px-4 py-2 rounded-xl box-pop font-semibold transition duration-300 hover:bg-blue-200">Link</Link>
+        {itemBought ? <p className="text-red-500 text-xl font-bold -my-2">Already Bought</p> : null}
+        {link != "" ? <Link href={link} target="_blank" className="bg-blue-400 px-4 py-2 rounded-xl box-pop font-semibold transition duration-300 hover:bg-blue-200">Link</Link> : <></>}
         <p className="text-center">{description}</p>
+        {itemBought ? <button onClick={handleClick} className="bg-blue-400 self-end px-2 py-1 mr-2 rounded-lg box-pop font-semibold transition duration-300 hover:bg-blue-200">Mark as not bought</button> : <button onClick={handleClick} className="bg-blue-400 self-end px-2 py-1 mr-2 rounded-lg box-pop font-semibold transition duration-300 hover:bg-blue-200">Mark as bought</button>}
       </li>
       <hr className="border-black my-4 w-full"></hr>
     </>
