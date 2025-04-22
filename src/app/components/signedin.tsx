@@ -111,7 +111,7 @@ export default function SignedIn(props : any) {
         <h1 className='mb-8 mx-2 text-lg font-semibold'>Your list is not visible here so you cannot see what others have bought you already but everyone else is able to see your list. Click the above button to view and modify your own list.</h1>
         {loading ? <h1 className='text-center'>Loading...</h1> : 
         <div className="flex flex-col items-center gap-10">
-          {names.map((user, index) => user != name ? <UserDisplay userName={user} family={family} data={data[index]} key={`${user} ${index}`} /> : null)}
+          {names.map((user, index) => user != name ? <UserDisplay userName={user} currUser={name} family={family} data={data[index]} key={`${user} ${index}`} /> : null)}
         </div>}
       </main>
     )
