@@ -77,7 +77,7 @@ export default function SignedIn(props : any) {
           <form className="flex flex-col items-center gap-3" onSubmit={handleSubmit}>
             <h1 className='font-semibold text-xl'>Add new item</h1>
             <h2 className='font-semibold text-red-500'>Item names must be unique</h2>
-            <h2 className='font-semibold text-red-500'>Item names must not contain these characters: ~ * / [ ]</h2>
+            <h2 className='font-semibold text-red-500'>Item names must not contain these characters: . ~ * / [ ]</h2>
             <div className='flex flex-col gap-4 md:flex-row'>
               <input className="bg-blue-200 px-4 py-2 rounded-xl box-pop" placeholder="Item Name" name='name' value={item.name} onChange={handleChange} required />
               <input className="bg-blue-200 px-4 py-2 rounded-xl box-pop" placeholder="Link (not required)" name='link' value={item.link} onChange={handleChange} />
