@@ -48,12 +48,35 @@ export default function SignedIn(props : any) {
   const handleSubmit = (event:any) => {
       event.preventDefault()
       const itemName = item.name
-      const newItem = {link: item.link, description: item.description, bought: false}
-      AddDBData(itemName, newItem)
-      setItem({name: '', link: '', description: ''})
-      const tempUserData:any = userData
-      tempUserData[itemName] = newItem
-      setUserData(tempUserData)
+
+      // Input validation for new item name
+      const charsToCheck = ['.', '~', '*', '/', '[', ']', '{', '}']
+      let invalid = false
+      let invalidChar = ""
+      for (const char of charsToCheck) {
+        if (itemName.includes(char)) {
+            invalid = true
+            invalidChar = char
+            break
+        }
+      }
+
+      // Checks for duplicate name
+      const currItemNames = Object.keys(userData)
+      let duplicate = currItemNames.includes(itemName)
+
+      if (invalid) {
+        alert(`Item name contains the invalid character ${invalidChar}`)
+      } else if (duplicate) {
+        alert("Item name already exists. Please choose a different item name.")
+      } else {
+        const newItem = {link: item.link, description: item.description, bought: false}
+        AddDBData(itemName, newItem)
+        setItem({name: '', link: '', description: ''})
+        const tempUserData:any = userData
+        tempUserData[itemName] = newItem
+        setUserData(tempUserData)
+      }
   }
 
   const AddDBData = async (itemName:any, newItem:any) => {
@@ -65,7 +88,7 @@ export default function SignedIn(props : any) {
     await updateDoc(doc(db, family, name), {[itemName]: deleteField()})
     let tempUserData:any = userData
     delete tempUserData[itemName]
-    setUserData(tempUserData)
+    setUserData({...tempUserData})
   }
 
   if (updating) {
